@@ -1,5 +1,6 @@
 body {
 	text-align: center;
+	background-color: lightyellow;
 }
 
 button {
@@ -38,6 +39,7 @@ canvas {
 	margin: 25px 25px;
 	height: 275px;
 	width: 400px;
+	border: dotted;
 }
 
 ul {
@@ -61,4 +63,5 @@ li {
 	float: right;
 	text-align: left;
 	margin-left: -25px;
+	margin-right: 70px;
 }
