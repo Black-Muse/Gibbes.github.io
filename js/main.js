@@ -158,6 +158,7 @@ button1.addEventListener("click", function () {
 			button1.innerHTML = "Reroll";
 		} else {
 			reroll1 = -1;
+			console.log("Player 1 chose to reroll from " + all_races[card1 - 1]);
 			deactivate(button1);
 		}
 	}
@@ -171,6 +172,7 @@ button2.addEventListener("click", function () {
 			button2.innerHTML = "Reroll";
 		} else {
 			reroll2 = -1;
+			console.log("Player 2 chose to reroll from " + all_races[card2 - 1]);
 			deactivate(button2);
 		}
 	}
@@ -335,6 +337,13 @@ function battleAction(p1, p2) {
 		deactivate(control);
 		inGame = "done";
 		active = false;
+		if (p1cards === 0 && p2cards === 0) {
+			console.log("Both players lose!");
+		} else if (p1cards === 0 ) {
+			console.log("Player 2 wins.");
+		} else {
+			console.log("Player 1 wins.");
+		}
 	}
 	
 }
