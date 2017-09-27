@@ -29,10 +29,13 @@ button:hover {
 	display: inline-block;
 }
 
-.ctr {
-	
+.card img {
+	margin: 25px 20px;
 }
 
-.card img {
-	margin: 0px 150px;
+canvas {
+	background: #eee;
+	margin: 25px 25px;
+	height: 275px;
+	width: 400px;
 }
