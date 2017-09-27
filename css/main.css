@@ -5,7 +5,7 @@ body {
 
 button {
 	display: inline-block;
-	margin: 0px 200px;
+	margin: 0px 150px;
 	line-height: 60px;
 	padding: 0 20px;
 	background: salmon;
@@ -42,6 +42,10 @@ canvas {
 	width: 400px;
 	border: dotted;
 	border-radius: 10%;
+}
+
+h1 {
+	margin-top: 100px;
 }
 
 ul {

@@ -70,7 +70,6 @@ function roll(card, i) {
 	"use strict";
 	
 	if (card === 1) {
-		console.log(all_races[card1]);
 		document.getElementById(all_races[card1] + "1").style.color = "#339";
 		card1 = (card1 + 1) % all_races.length;
 		if (inv1[card1] === all_races[card1]) {
