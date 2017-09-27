@@ -41,6 +41,7 @@ canvas {
 	height: 275px;
 	width: 400px;
 	border: dotted;
+	border-radius: 10%;
 }
 
 ul {

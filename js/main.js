@@ -33,6 +33,8 @@ wrapText(text, ctx, 20, 30, maxWidth);
 
 
 /** INIT PLAYER MATERIALS **/
+var img1 = document.getElementById("img1");
+var img2 = document.getElementById("img2");
 var all_races = ["Asherog", "Buzari", "Leonid", "Rachnian", "Suronian"];
 var inv1 = all_races.splice();
 var inv2 = all_races.splice();
@@ -73,6 +75,7 @@ function roll(card, i) {
 		card1 = (card1 + 1) % all_races.length;
 		if (inv1[card1] === all_races[card1]) {
 			document.getElementById(all_races[card1] + "1").style.color = "#393";
+			img1.src = "img/" + all_races[card1] + "-flip.jpg";
 		} else {
 			i--;
 		}
@@ -81,6 +84,7 @@ function roll(card, i) {
 		card2 = (card2 + 1) % all_races.length;
 		if (inv2[card2] === all_races[card2]) {
 			document.getElementById(all_races[card2] + "2").style.color = "#393";
+			img2.src = "img/" + all_races[card2] + ".jpg";
 		} else {
 			i--;
 		}
@@ -92,7 +96,7 @@ function roll(card, i) {
 button1.addEventListener("click", function () {
 	"use strict";
 	if (inGame && reroll1 !== -1) {
-		roll(1, Math.floor((Math.random() * 5) + 5));
+		roll(1, Math.floor((Math.random() * 5) + 10));
 		if (!reroll1) {
 			reroll1 = true;
 			button1.innerHTML = "Reroll";
@@ -104,7 +108,7 @@ button1.addEventListener("click", function () {
 button2.addEventListener("click", function () {
 	"use strict";
 	if (inGame && reroll2 !== -1) {
-		roll(2, Math.floor((Math.random() * 5) + 5));
+		roll(2, Math.floor((Math.random() * 5) + 10));
 		if (!reroll2) {
 			reroll2 = true;
 			button2.innerHTML = "Reroll";
