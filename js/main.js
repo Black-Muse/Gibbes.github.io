@@ -25,8 +25,34 @@ function wrapText(text, ctx, x, y, maxWidth) {
 	ctx.fillText(line, x, y);
 }
 
-ctx.font = '12pt Arial';
+ctx.font = 'bold 12pt Arial';
 ctx.fillStyle = '#933';
 var maxWidth = 200;
 var text = "Welcome to Alien Nation! Each player controls a deck of 5 unique cards. Press 'Begin' to initialize the deck.";
 wrapText(text, ctx, 20, 30, maxWidth);
+
+
+/** INIT PLAYER MATERIALS **/
+var inv1 = [];
+var inv2 = [];
+var all_races = ["Asherog", "Buzari", "Leonid", "Rachnian", "Suronian"];
+function init_inv() {
+	"use strict";
+	
+	return all_races.slice();
+}
+
+
+/** BEGIN/RESET FUNCTIONALITY **/
+var inGame = false;
+var control = document.getElementById("ctr");
+control.addEventListener("click", function () {
+	"use strict";
+	
+	if (!inGame) {
+		control.innerHTML = "Restart";
+		inGame = true;
+	}
+	inv1 = init_inv();
+	inv2 = init_inv();
+});

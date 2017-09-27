@@ -3,26 +3,37 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title>Alien Card Game</title>
+		<title>Alien Nations</title>
 		<link href="css/normalize.css" rel="stylesheet" >
 		<link href="css/main.css" rel="stylesheet" >
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	</head>
 	<body id="body">
-		<h1>Alien Nation</h1>
+		<h1>Alien Nations</h1>
 		<div id="button">
 			<button class="button1">Roll</button>
 			<button class="button2">Roll</button>
 		</div><br>
 		<div class="card">
-			<ul>
-				<li>Asherog</li>
+			<ul class="l_inventory">
+				<li id="Asherog1">Asherog</li>
+				<li id="Buzari1">Buzari</li>
+				<li id="Leonid1">Leonid</li>
+				<li id="Rachnian1">Rachnian</li>
+				<li id="Suronian1">Suronian</li>
 			</ul>
-			<img src="img/Asherog.jpg" width = "200">
+			<img src="img/Benusi (c).jpg" width = "200">
 			<canvas id="notify"></canvas>
-			<img src="img/Asherog.jpg" width = "200">
+			<img src="img/Benusi (c).jpg" width = "200">
+			<ul class="r_inventory">
+				<li id="Asherog1">Asherog</li>
+				<li id="Buzari1">Buzari</li>
+				<li id="Leonid1">Leonid</li>
+				<li id="Rachnian1">Rachnian</li>
+				<li id="Suronian1">Suronian</li>
+			</ul>
 		</div><br>
-		<button class="ctr">Begin</button>
+		<button id="ctr">Begin</button>
 		<script src="js/main.js" type="text/javascript"></script>
 	</body>
 </html>
