@@ -216,21 +216,30 @@ function battleAction(p1, p2) {
 					break;
 				case "Buzari":
 					insert(ash_buz);
+					document.getElementbyId("Buzari2").style.backgroundColor = "#eee";
+					p2cards -= 1;
 					break;
 				case "Leonid":
 					insert(ash_leo);
+					document.getElementbyId("Leonid2").style.backgroundColor = "#eee";
+					p2cards -= 1;
 					break;
 				case "Rachnian":
 					insert(ash_rac);
+					document.getElementbyId("Rachnian2").style.backgroundColor = "#eee";
+					p2cards -= 1;
 					break;
 				case "Suronian":
 					insert(ash_sur);
+					document.getElementbyId("Suronian2").style.backgroundColor = "#eee";
 			}
 			break;
 		case "Buzari":
 			switch(p2) {
 				case "Asherog":
 					insert(ash_buz);
+					document.getElementbyId("Buzari1").style.backgroundColor = "#eee";
+					p1cards -= 1;
 					break;
 				case "Buzari":
 					insert(buz_buz);
@@ -249,6 +258,8 @@ function battleAction(p1, p2) {
 			switch(p2) {
 				case "Asherog":
 					insert(ash_leo);
+					document.getElementbyId("Leonid2").style.backgroundColor = "#eee";
+					p2cards -= 1;
 					break;
 				case "Buzari":
 					insert(buz_leo);
@@ -267,6 +278,8 @@ function battleAction(p1, p2) {
 			switch(p2) {
 				case "Asherog":
 					insert(ash_rac);
+					document.getElementbyId("Rachnian1").style.backgroundColor = "#eee";
+					p2cards -= 1;
 					break;
 				case "Buzari":
 					insert(buz_rac);
@@ -285,6 +298,8 @@ function battleAction(p1, p2) {
 			switch(p2) {
 				case "Asherog":
 					insert(ash_sur);
+					document.getElementbyId("Suronian2").style.backgroundColor = "#eee";
+					p2cards -= 1;
 					break;
 				case "Buzari":
 					insert(buz_sur);
