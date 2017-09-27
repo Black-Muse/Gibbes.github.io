@@ -2,15 +2,37 @@ body {
 	text-align: center;
 }
 
-button1, button2 {
+button {
 	display: inline-block;
 	margin: 0px 200px;
 	line-height: 60px;
-	padding: 0 40px;
+	padding: 0 20px;
 	background: salmon;
 	font-weight: bold;
+	border: none;
+	width: 150px;
 }
 
-button1:hover, button2:hover {
+button:hover {
 	background: lightsalmon;
+}
+
+.button1 {
+	text-align: left;
+}
+
+.button2 {
+	text-align: right;
+}
+
+.card {
+	display: inline-block;
+}
+
+.ctr {
+	
+}
+
+.card img {
+	margin: 0px 150px;
 }
