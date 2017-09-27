@@ -1,0 +1,16 @@
+body {
+	text-align: center;
+}
+
+button1, button2 {
+	display: inline-block;
+	margin: 0px 200px;
+	line-height: 60px;
+	padding: 0 40px;
+	background: salmon;
+	font-weight: bold;
+}
+
+button1:hover, button2:hover {
+	background: lightsalmon;
+}
