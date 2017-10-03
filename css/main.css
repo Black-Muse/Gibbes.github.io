@@ -34,8 +34,17 @@ canvas {
 	border-radius: 10%;
 }
 
-h1 {
-	margin-top: 100px;
+footer {
+	font-family: "Germania One";
+	color: azure;
+	margin: 50px 0;
+}
+
+header {
+	background-color: azure;
+	color: slategray;
+	font-family: "Germania One";
+	font-size: 2em;
 }
 
 ul {
@@ -69,20 +78,27 @@ li {
 }
 
 .grid {
-	align-content: center;
 	display: grid;
 	grid-template-columns: repeat(5, 19%);
 	grid-gap: 1%;
 	padding: 10px;
 }
 
+.grid div {
+	font-family: "Germania One";
+	font-size: 2em;
+	color: azure;
+	border-color: white;
+	border-style: solid;
+	border-width: medium;
+	border-radius: 10%;
+	background-color: steelblue;
+}
+
 .grid img {
 	width: 100%;
 	height: auto;
-	border-color: white;
 	border-radius: 10%;
-	border-style: solid;
-	border-width: medium;
 }
 
 .l_inventory {
