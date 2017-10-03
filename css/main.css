@@ -1,7 +1,14 @@
-body {
-	text-align: center;
-	background-color: lightyellow;
+/** MAIN STYLING **/
+* {
+	padding: 0;
+	margin: 0;
 }
+
+body {
+	background-color: slategray;
+	text-align: center;
+}
+	
 
 button {
 	display: inline-block;
@@ -16,23 +23,6 @@ button {
 
 button:hover {
 	background: lightsalmon;
-}
-
-.button1 {
-	text-align: left;
-}
-
-.button2 {
-	text-align: right;
-}
-
-.card {
-	display: inline-block;
-}
-
-.card img {
-	border-radius: 10%;
-	margin: 25px 20px;
 }
 
 canvas {
@@ -60,6 +50,41 @@ li {
 	padding: 0 0 35px 0;
 }
 
+/** CLASS ADJUSTMENTS **/
+.button1 {
+	text-align: left;
+}
+
+.button2 {
+	text-align: right;
+}
+
+.card {
+	display: inline-block;
+}
+
+.card img {
+	border-radius: 10%;
+	margin: 25px 20px;
+}
+
+.grid {
+	align-content: center;
+	display: grid;
+	grid-template-columns: 19% 19% 19% 19% 19%;
+	grid-gap: 1%;
+	padding: 10px;
+}
+
+.grid img {
+	width: 100%;
+	height: auto;
+	border-color: white;
+	border-radius: 10%;
+	border-style: solid;
+	border-width: medium;
+}
+
 .l_inventory {
 	float: left;
 	text-align: right;
@@ -74,4 +99,31 @@ li {
 
 .sel {
 	list-style: "#eee";
+}
+
+@media (max-width: 1200px) {
+	.grid {
+		grid-template-columns: 24% 24% 24% 24%;
+		grid-gap: 1%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.grid {
+		grid-template-columns: 32% 32% 32%;
+		grid-gap: 1.3333%;
+	}
+}
+
+@media (max-width: 800px) {
+	.grid {
+		grid-template-columns: 49% 49%;
+		grid-gap: 2%;
+	}
+}
+
+@media (max-width: 600px) {
+	.grid {
+		grid-template-columns: 100%;
+	}
 }
