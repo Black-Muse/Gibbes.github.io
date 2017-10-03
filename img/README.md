@@ -1,6 +1,5 @@
 Jaco!
 
-Upload all your images here. Try to maintain consistent names and consistent
-sizes of files (e.g. suronian.png).
+Great job on all the images! I think we have everything we need for all 10 races.
 
 Happy gaming! :D
