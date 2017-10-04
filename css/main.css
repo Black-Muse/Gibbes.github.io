@@ -90,11 +90,16 @@ li {
 	font-family: "Germania One";
 	font-size: 2em;
 	color: azure;
-	border-color: azure;
+	border-color: darkblue;
 	border-style: solid;
 	border-width: medium;
-	border-radius: 10%;
 	background-color: steelblue;
+	transition: background-color 0.5s;
+}
+
+.grid div:hover {
+	border-radius: 10%;
+	background-color: aqua;
 }
 
 .grid img {
@@ -103,6 +108,10 @@ li {
 	border-color: deepskyblue;
 	border-style: solid;
 	border-width: medium;
+	transition: border-radius 0.5s;
+}
+
+.grid img:hover {
 	border-radius: 10%;
 }
 
