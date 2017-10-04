@@ -53,7 +53,6 @@ ul {
 	margin: 25px;
 	list-style: none;
 	font-weight: bold;
-	font: Arial;
 }
 
 li {
@@ -94,7 +93,7 @@ li {
 	border-style: solid;
 	border-width: medium;
 	background-color: steelblue;
-	transition: background-color 0.5s;
+	transition: border-radius 0.5s, background-color 0.5s;
 }
 
 .grid div:hover {
@@ -108,11 +107,13 @@ li {
 	border-color: deepskyblue;
 	border-style: solid;
 	border-width: medium;
-	transition: border-radius 0.5s;
+	opacity: 0.5;
+	transition: opacity 0.5s, border-radius 0.5s;
 }
 
 .grid img:hover {
 	border-radius: 10%;
+	opacity: 1;
 }
 
 .l_inventory {
