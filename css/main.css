@@ -80,8 +80,8 @@ li {
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(5, 19%);
-	grid-gap: 1%;
+	grid-template-columns: repeat(5, 17%);
+	grid-gap: 3%;
 	padding: 30px;
 }
 
@@ -93,6 +93,7 @@ li {
 	border-style: solid;
 	border-width: medium;
 	background-color: steelblue;
+	border-radius: 0%;
 	transition: border-radius 0.5s, background-color 0.5s;
 }
 
