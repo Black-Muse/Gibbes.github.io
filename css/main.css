@@ -36,8 +36,9 @@ canvas {
 
 footer {
 	font-family: "Germania One";
-	color: azure;
-	margin: 50px 0;
+	background-color: azure;
+	color: slategray;
+	padding: 20px 0 20px 0;
 }
 
 header {
@@ -45,6 +46,7 @@ header {
 	color: slategray;
 	font-family: "Germania One";
 	font-size: 2em;
+	padding: 5px 0 10px 0;
 }
 
 ul {
@@ -81,14 +83,14 @@ li {
 	display: grid;
 	grid-template-columns: repeat(5, 19%);
 	grid-gap: 1%;
-	padding: 10px;
+	padding: 30px;
 }
 
 .grid div {
 	font-family: "Germania One";
 	font-size: 2em;
 	color: azure;
-	border-color: white;
+	border-color: azure;
 	border-style: solid;
 	border-width: medium;
 	border-radius: 10%;
@@ -96,8 +98,11 @@ li {
 }
 
 .grid img {
-	width: 100%;
+	width: 90%;
 	height: auto;
+	border-color: deepskyblue;
+	border-style: solid;
+	border-width: medium;
 	border-radius: 10%;
 }
 
