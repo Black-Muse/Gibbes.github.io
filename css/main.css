@@ -81,7 +81,7 @@ li {
 .grid {
 	display: grid;
 	grid-template-columns: repeat(5, 17%);
-	grid-gap: 3%;
+	grid-gap: 20px 3%;
 	padding: 30px;
 }
 
@@ -136,21 +136,21 @@ li {
 @media (max-width: 1200px) {
 	.grid {
 		grid-template-columns: repeat(4, 24%);
-		grid-gap: 1%;
+		grid-gap: 20px 1%;
 	}
 }
 
 @media (max-width: 1000px) {
 	.grid {
 		grid-template-columns: repeat(3, 32%);
-		grid-gap: 1.3333%;
+		grid-gap: 20px 1.3333%;
 	}
 }
 
 @media (max-width: 800px) {
 	.grid {
 		grid-template-columns: repeat(2, 49%);
-		grid-gap: 2%;
+		grid-gap: 20px 2%;
 	}
 }
 
