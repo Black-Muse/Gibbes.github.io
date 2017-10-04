@@ -1,8 +1,4 @@
 /** MAIN STYLING **/
-* {
-	padding: 0;
-	margin: 0;
-}
 
 body {
 	background-color: slategray;
@@ -108,13 +104,13 @@ li {
 	border-color: deepskyblue;
 	border-style: solid;
 	border-width: medium;
-	opacity: 1;
+	opacity: 0.5;
 	transition: opacity 0.5s, border-radius 0.5s;
 }
 
 .grid img:hover {
 	border-radius: 10%;
-	opacity: 0.5;
+	opacity: 1;
 }
 
 .l_inventory {
