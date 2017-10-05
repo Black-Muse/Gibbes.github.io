@@ -26,7 +26,7 @@ function begin(elem) {
 			'<div id = "b4" class="Benusi">Benusi<br>Trucker<img src="img/Benusi.jpg"></div>'+
 			'<div id = "b5" class="Buzari">Buzari<br>Merchant<img src="img/Buzari.jpg"></div>'+
 			'<div id = "b6" class="Charn">Charn<br>Telepath<img src="img/Charn.jpg"></div>'+
-			'<div id = "b7" class="Leonid">Leonid<br>Slaver<img src="img/Leonid.jpg"></div>'+
+			'<div id = "b7" class="Leonid">Leonid<br>Warden<img src="img/Leonid.jpg"></div>'+
 			'<div id = "b8" class="Rachnian">Rachnian<br>Pirate<img src="img/Rachnian.jpg"></div>'+
 			'<div id = "b9" class="Suronian">Suronian<br>Warrior<img src="img/Suronian.jpg"></div>'+
 			'<div id = "b10" class="Thuvix">Thuvix<br>Mechanic<img src="img/Thuvix.jpg"></div>'+
