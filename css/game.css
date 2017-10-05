@@ -1,0 +1,98 @@
+/* CSS Document */
+
+.game {
+	display: grid;
+	grid-template-columns: repeat(2, 5%) repeat(4, 15%) repeat(2, 5%);
+	grid-gap: 2.85%;
+	padding: 30px 100px;
+	grid-template-areas:
+		"player1 player1 board board board board player2 player2"
+		"player1 player1 board board board board player2 player2"
+		"player1 player1 txt txt txt txt player2 player2"
+		"player1 player1 txt txt txt txt player2 player2"
+		"player1 player1 txt txt txt txt player2 player2"
+		"player1 player1 txt txt txt txt player2 player2"
+		"roll1 roll1 result result result result roll2 roll2"
+		"hp1 hp1 result result result result hp2 hp2";
+}
+
+.game div div{
+	font-family: "Germania One";
+	font-size: 2em;
+	color: azure;
+	border-color: darkblue;
+	border-style: solid;
+	border-width: medium;
+	background-color: steelblue;
+	border-radius: 0%;
+	transition: border-radius 0.5s, background-color 0.5s;
+}
+
+.game div div:hover {
+	border-radius: 10%;
+	background-color: aqua;
+}
+
+.game img {
+	width: 90%;
+	height: auto;
+	border-color: deepskyblue;
+	border-style: solid;
+	border-width: thin;
+	opacity: 1;
+	transition: opacity 0.5s, border-radius 0.5s;
+}
+
+.game img:hover {
+	border-radius: 10%;
+	opacity: 0.5;
+}
+
+.player1 {
+	display: grid;
+	grid-gap: 5px;
+	grid-area: player1;
+	grid-template-columns: repeat(2, 45%);
+}
+
+.player2 {
+	display: grid;
+	grid-gap: 5px;
+	grid-area: player2;
+	grid-template-columns: repeat(2, 45%);
+}
+
+.board {
+	display: grid;
+	grid-gap: 20px;
+	grid-area: board;
+	grid-template-columns: repeat(2, 45%);
+}
+
+.board img {
+	height: auto;
+}
+
+.txt {
+	grid-area: txt;
+}
+
+.roll1 {
+	grid-area: roll1;
+}
+
+.hp1 {
+	grid-area: hp1;
+}
+
+.result {
+	grid-area: result;
+}
+
+.roll2 {
+	grid-area: roll2;
+}
+
+.hp2 {
+	grid-area: hp2;
+}
