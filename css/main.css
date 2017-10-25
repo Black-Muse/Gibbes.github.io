@@ -4,7 +4,7 @@ body {
 	background-color: slategray;
 	text-align: center;
 }
-	
+
 
 button {
 	display: inline-block;
@@ -115,7 +115,7 @@ li {
 	border-color: deepskyblue;
 	border-style: solid;
 	border-width: medium;
-	opacity: 1;
+	opacity: 0.5;
 	transition: opacity 0.5s, border-radius 0.5s;
 	z-index: -1;
 }
@@ -126,7 +126,7 @@ li {
 }
 
 .grid h2 {
-	
+
 	position:absolute;
 	margin: 15%;
 	text-align:center;
