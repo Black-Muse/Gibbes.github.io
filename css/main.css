@@ -44,6 +44,12 @@ header {
 	font-size: 2em;
 	padding: 5px 0 10px 0;
 }
+#intro {
+	margin: 20px 10%;
+	color: azure;
+	font-family: "Germania One";
+	font-size: 1.5em;
+}
 
 ul {
 	margin: 25px;
@@ -57,6 +63,27 @@ li {
 }
 
 /** CLASS ADJUSTMENTS **/
+.concept {
+	display: grid;
+	grid-template-columns: repeat(2, 47%);
+	grid-gap: 20px 3%;
+	padding: 30px;
+	color: azure;
+	font-family: "Germania One";
+	font-size: 2em;
+}
+
+.concept img {
+	width: 90%;
+	height: auto;
+	border-color: deepskyblue;
+	border-style: solid;
+	border-width: medium;
+	opacity: 1;
+	transition: opacity 0.5s, border-radius 0.5s;
+	z-index: -1;
+}
+
 .grid {
 	display: grid;
 	grid-template-columns: repeat(5, 17%);
@@ -103,7 +130,7 @@ li {
 	position:absolute;
 	margin: 15%;
 	text-align:center;
-	font-size: 0.9em;
+	font-size: 0.65em;
 	width: 70%;
 	color: transparent;
 	transition: color 0.5s;
@@ -133,6 +160,7 @@ li {
 	.grid {
 		grid-template-columns: repeat(4, 24%);
 		grid-gap: 20px 1%;
+		font-size: 0.65em;
 	}
 }
 
