@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114207085072462438}
   m_Layer: 0
   m_Name: asteroid
-  m_TagString: Untagged
+  m_TagString: draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1236353331935378}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1fed060bba414ab4f93696a43452eab1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -90,7 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Count: 0
-  prefab: {fileID: 0}
 --- !u!212 &212526057735197300
 SpriteRenderer:
   m_ObjectHideFlags: 1

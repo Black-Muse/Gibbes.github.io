@@ -5,12 +5,14 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour {
 
     public int Count;
+    Rigidbody2D comp;
 
 	// Use this for initialization
 	void Start () {
+        comp = GetComponent<Rigidbody2D>();
         Count = 0;
-        GetComponent<Rigidbody2D>().angularVelocity = Random.value * 60.0f;
-        GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle;
+        comp.angularVelocity = Random.value * 60.0f;
+        comp.velocity = Random.insideUnitCircle;
 
     }
 	
@@ -23,6 +25,25 @@ public class Asteroid : MonoBehaviour {
         else if (Input.GetKey(KeyCode.D))
         {
             transform.position = new Vector2(transform.position.x - General.Distance, transform.position.y);
+        }
+        deleteIfFar();
+        if (comp.angularVelocity > 60.0f)
+        {
+            comp.angularVelocity = 60.0f;
+        }
+        if (comp.angularVelocity < -60.0f)
+        {
+            comp.angularVelocity = -60.0f;
+        }
+
+    }
+
+    // Remove asteroids that have gotten too far away
+    void deleteIfFar ()
+    {
+        if (Mathf.Abs(transform.position.x) > 20 || Mathf.Abs(transform.position.y) > 20)
+        {
+            Destroy(gameObject);
         }
     }
 }
