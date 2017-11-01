@@ -8,17 +8,23 @@ public class General : MonoBehaviour {
     public static float Distance;
     public static float HorizontalPos;
     public static float LevelDistance;
+    public static int AsteroidCount;
+    public static int AlienCount;
     public int MaxDistance;
-    public Transform prefab;
+    public Transform asteroid;
+    public Transform alien;
     public int RayZ;
     public int ForceMultiplier;
     public Slider sld;
+    public Slider hld;
+    public static bool mouseDragging;
+    public static float damage;
+    public static int health;
 
     Camera cam;
     LineRenderer lr;
     RaycastHit2D hit;
     GameObject target;
-    bool mouseDragging;
 
     // Use this for initialization
     void Start () {
@@ -26,10 +32,14 @@ public class General : MonoBehaviour {
         lr = GetComponent<LineRenderer>();
         Distance = 0.1f;
         HorizontalPos = 0;
-        LevelDistance = 100.0f;
+        LevelDistance = 250.0f;
+        AsteroidCount = 0;
+        AlienCount = 0;
         MaxDistance = 0;
         RayZ = 1;
         ForceMultiplier = 15;
+        health = 300;
+        damage = 0;
         
 	}
 	
@@ -38,6 +48,8 @@ public class General : MonoBehaviour {
         horizontals();
         tractorBeam();
         sld.value = Mathf.Max(0, HorizontalPos / LevelDistance);
+        hld.value = damage / health;
+
         
     }
     
@@ -46,8 +58,8 @@ public class General : MonoBehaviour {
     {
         if (HorizontalPos > MaxDistance)
         {
-            Instantiate(prefab, new Vector2(12, (10 * Random.value) - 5), Quaternion.identity);
-            MaxDistance += 5;
+            Instantiate(asteroid, new Vector2(12, (10 * Random.value) - 5), Quaternion.identity);
+            MaxDistance += 2;
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -55,7 +67,7 @@ public class General : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            HorizontalPos -= Distance;
+            HorizontalPos -= Distance / 4;
         }
     }
 
