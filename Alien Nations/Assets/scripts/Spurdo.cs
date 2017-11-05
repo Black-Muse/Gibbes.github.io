@@ -19,7 +19,7 @@ public class Spurdo : MonoBehaviour {
     {
         Speed = 2.0f;
         flip = 0;
-        maxRot = 5;
+        maxRot = 20;
         repeating = 0;
         repeatingMax = 8;
         z = 0;
@@ -35,7 +35,6 @@ public class Spurdo : MonoBehaviour {
             {
                 transform.eulerAngles = new Vector3(0, 0, z++);
             }
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, Speed);
         }
         else if (Input.GetKey(KeyCode.S) && transform.position.y > -5)
         {
@@ -43,7 +42,6 @@ public class Spurdo : MonoBehaviour {
             {
                 transform.eulerAngles = new Vector3(0, 0, z--);
             }
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -Speed);
         }
         else
         {
@@ -63,24 +61,21 @@ public class Spurdo : MonoBehaviour {
     // Collider flasher
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.relativeVelocity.magnitude > 2)
+        InvokeRepeating("flash", 0, 0.05f);
+        for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
         {
-            InvokeRepeating("flash", 0, 0.05f);
-            for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
+            Instantiate(Fodder, collision.transform.position, Quaternion.identity);
+        }
+        Destroy(collision.collider.gameObject);
+        General.mouseDragging = false;
+        General.damage += collision.relativeVelocity.magnitude * 20;
+        if (General.damage >= General.health)
+        {
+            for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
             {
                 Instantiate(Fodder, collision.transform.position, Quaternion.identity);
             }
-            Destroy(collision.collider.gameObject);
-            General.mouseDragging = false;
-            General.damage += collision.relativeVelocity.magnitude * 5;
-            if (General.damage >= General.health)
-            {
-                for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
-                {
-                    Instantiate(Fodder, collision.transform.position, Quaternion.identity);
-                }
-                Destroy(this.gameObject);
-            }
+            Destroy(this.gameObject);
         }
     }
 

@@ -7,15 +7,18 @@ public class General : MonoBehaviour {
 
     public static float Distance;
     public static float HorizontalPos;
+    public static float VerticalPos;
+    public static float Magnitude;
+    public static float NextMagnitude;
     public static float LevelDistance;
     public static int AsteroidCount;
     public static int AlienCount;
-    public int MaxDistance;
     public Transform asteroid;
     public Transform alien;
     public int RayZ;
     public int ForceMultiplier;
     public Slider hld;
+    public SpriteRenderer hud;
     public static bool mouseDragging;
     public static float damage;
     public static int health;
@@ -34,43 +37,69 @@ public class General : MonoBehaviour {
         LevelDistance = 250.0f;
         AsteroidCount = 0;
         AlienCount = 0;
-        MaxDistance = 0;
+        Magnitude = 0;
+        NextMagnitude = 0;
         RayZ = 1;
         ForceMultiplier = 15;
         health = 300;
         damage = 0;
-        
-	}
+        Color c = hud.color;
+        c.a = 0.5f;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        horizontals();
+        movement();
         tractorBeam();
         hld.value = damage / health;
-
-        
     }
     
-    // Deals with horizontal movement
-    void horizontals ()
+    // Deals with movement
+    void movement ()
+    {   
+        bool w = Input.GetKey(KeyCode.W), a = Input.GetKey(KeyCode.A), s = Input.GetKey(KeyCode.S), d = Input.GetKey(KeyCode.D);
+        if (w || a || s || d)
+        {
+            if (w)
+            {
+                VerticalPos += Distance;
+                Magnitude += Distance;
+                spawn((Random.value * 24) - 12, 11);
+            }
+            else if (s)
+            {
+                VerticalPos -= Distance;
+                Magnitude += Distance;
+                spawn((Random.value * 24) - 12, -11);
+            }
+            if (d)
+            {
+                HorizontalPos += Distance;
+                Magnitude += Distance;
+                spawn(12, (10 * Random.value) - 5);
+            }
+            else if (a)
+            {
+                HorizontalPos -= Distance / 4;
+                Magnitude += Distance / 4;
+                spawn(-12, (10 * Random.value) - 5);
+            }
+        }
+    }
+    
+    // Manages creation of new asteroids
+    void spawn (float x, float y)
     {
-        if (HorizontalPos > MaxDistance)
+        if (Magnitude > NextMagnitude && AsteroidCount < 30)
         {
-            Instantiate(asteroid, new Vector2(12, (10 * Random.value) - 5), Quaternion.identity);
-            MaxDistance += 5;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            HorizontalPos += Distance;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            HorizontalPos -= Distance / 4;
+            NextMagnitude += 5;
+            Instantiate(asteroid, new Vector2(x, y), Quaternion.identity);
+            AsteroidCount += 1;
         }
     }
 
     // Works with tractor beam
-    void tractorBeam()
+    void tractorBeam ()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -88,7 +117,7 @@ public class General : MonoBehaviour {
             if (mouseDragging)
             {
                 mouseDragging = false;
-                target.GetComponent<Rigidbody2D>().AddForceAtPosition((cam.ScreenToWorldPoint(Input.mousePosition) - target.transform.position) * ForceMultiplier, hit.point);
+                target.GetComponent<Rigidbody2D>().AddForceAtPosition((target.transform.position - cam.ScreenToWorldPoint(Input.mousePosition)) * ForceMultiplier, hit.point);
             }
         }
         if (mouseDragging)

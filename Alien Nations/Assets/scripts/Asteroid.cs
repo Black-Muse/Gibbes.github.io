@@ -24,6 +24,14 @@ public class Asteroid : MonoBehaviour {
         {
             transform.position = new Vector2(transform.position.x - General.Distance, transform.position.y);
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y - General.Distance);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y + General.Distance);
+        }
         deleteIfFar();
         controlSpin();
 
@@ -34,6 +42,9 @@ public class Asteroid : MonoBehaviour {
     {
         if (Mathf.Abs(transform.position.x) > 20 || Mathf.Abs(transform.position.y) > 20)
         {
+            if (gameObject.tag == "draggable") {
+                General.AsteroidCount -= 1;
+            }
             Destroy(gameObject);
         }
     }
