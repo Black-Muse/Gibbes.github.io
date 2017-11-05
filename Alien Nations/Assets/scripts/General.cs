@@ -15,7 +15,6 @@ public class General : MonoBehaviour {
     public Transform alien;
     public int RayZ;
     public int ForceMultiplier;
-    public Slider sld;
     public Slider hld;
     public static bool mouseDragging;
     public static float damage;
@@ -47,7 +46,6 @@ public class General : MonoBehaviour {
 	void Update () {
         horizontals();
         tractorBeam();
-        sld.value = Mathf.Max(0, HorizontalPos / LevelDistance);
         hld.value = damage / health;
 
         
@@ -59,7 +57,7 @@ public class General : MonoBehaviour {
         if (HorizontalPos > MaxDistance)
         {
             Instantiate(asteroid, new Vector2(12, (10 * Random.value) - 5), Quaternion.identity);
-            MaxDistance += 2;
+            MaxDistance += 5;
         }
         if (Input.GetKey(KeyCode.D))
         {

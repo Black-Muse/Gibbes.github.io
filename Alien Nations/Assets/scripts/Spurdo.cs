@@ -15,7 +15,8 @@ public class Spurdo : MonoBehaviour {
     int z;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         Speed = 2.0f;
         flip = 0;
         maxRot = 5;
@@ -25,9 +26,10 @@ public class Spurdo : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         Vector3 angle = transform.rotation.eulerAngles;
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && transform.position.y < 5)
         {
             if (z < maxRot)
             {
@@ -35,7 +37,7 @@ public class Spurdo : MonoBehaviour {
             }
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, Speed);
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && transform.position.y > -5)
         {
             if (z > -maxRot)
             {
@@ -61,22 +63,24 @@ public class Spurdo : MonoBehaviour {
     // Collider flasher
     void OnCollisionEnter2D(Collision2D collision)
     {
-        InvokeRepeating("flash", 0, 0.05f);
-        for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
+        if (collision.relativeVelocity.magnitude > 2)
         {
-            Instantiate(Fodder, collision.transform.position, Quaternion.identity);
-        }
-        Destroy(collision.collider.gameObject);
-        General.mouseDragging = false;
-        General.damage += collision.relativeVelocity.magnitude * 5;
-
-        if (General.damage >= General.health)
-        {
-            for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
+            InvokeRepeating("flash", 0, 0.05f);
+            for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
             {
                 Instantiate(Fodder, collision.transform.position, Quaternion.identity);
             }
-            Destroy(this.gameObject);
+            Destroy(collision.collider.gameObject);
+            General.mouseDragging = false;
+            General.damage += collision.relativeVelocity.magnitude * 5;
+            if (General.damage >= General.health)
+            {
+                for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
+                {
+                    Instantiate(Fodder, collision.transform.position, Quaternion.identity);
+                }
+                Destroy(this.gameObject);
+            }
         }
     }
 

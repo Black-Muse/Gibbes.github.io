@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4374364292305182}
   - component: {fileID: 212526057735197300}
   - component: {fileID: 50959836160384706}
-  - component: {fileID: 58482051203761440}
   - component: {fileID: 114207085072462438}
+  - component: {fileID: 58957083310784092}
   m_Layer: 0
   m_Name: asteroid
   m_TagString: draggable
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1236353331935378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.79, y: -0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.276, y: -0.172, z: 0}
+  m_LocalScale: {x: 0.10286595, y: 0.10286595, z: 0.10286595}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58482051203761440
+--- !u!58 &58957083310784092
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -71,13 +71,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 1236353331935378}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 1fed060bba414ab4f93696a43452eab1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.43
+  m_Radius: 8.415
 --- !u!114 &114207085072462438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c683148af218d489fef81c4bb83d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Count: 0
 --- !u!212 &212526057735197300
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,10 +120,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 665402291
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8e68e540e474224d99c5aef9cf469d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa4451942b41ad542b693eba86a01a4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

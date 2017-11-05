@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1452162679
+    locked: 0
+  - name: Spurdo
+    uniqueID: 3014261193
+    locked: 0
+  - name: Misc
+    uniqueID: 665402291
+    locked: 0
+  - name: UI
+    uniqueID: 2001072209
+    locked: 0
