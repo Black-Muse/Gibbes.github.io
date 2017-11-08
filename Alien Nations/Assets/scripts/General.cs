@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class General : MonoBehaviour {
 
@@ -17,8 +16,6 @@ public class General : MonoBehaviour {
     public Transform alien;
     public int RayZ;
     public int ForceMultiplier;
-    public Slider hld;
-    public SpriteRenderer hud;
     public static bool mouseDragging;
     public static float damage;
     public static int health;
@@ -43,15 +40,12 @@ public class General : MonoBehaviour {
         ForceMultiplier = 15;
         health = 300;
         damage = 0;
-        Color c = hud.color;
-        c.a = 0.5f;
     }
 	
 	// Update is called once per frame
 	void Update () {
         movement();
         tractorBeam();
-        hld.value = damage / health;
     }
     
     // Deals with movement

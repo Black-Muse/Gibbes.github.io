@@ -219,10 +219,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\planet.cs" />
     <Compile Include="Assets\scripts\Asteroid.cs" />
     <Compile Include="Assets\scripts\General.cs" />
-    <Compile Include="Assets\scripts\hud.cs" />
+    <Compile Include="Assets\scripts\Health.cs" />
+    <Compile Include="Assets\scripts\HUD.cs" />
+    <Compile Include="Assets\scripts\Planet_Hud.cs" />
     <Compile Include="Assets\scripts\Spurdo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

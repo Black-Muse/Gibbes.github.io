@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hud : MonoBehaviour {
+public class HUD : MonoBehaviour {
 
     float transparency;
     bool up;
