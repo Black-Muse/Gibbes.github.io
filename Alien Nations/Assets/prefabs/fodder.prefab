@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212293059072306680}
   - component: {fileID: 50928640063144110}
   - component: {fileID: 114173376938048532}
+  - component: {fileID: 114200983665455322}
   m_Layer: 0
   m_Name: fodder
   m_TagString: Untagged
@@ -73,6 +74,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c683148af218d489fef81c4bb83d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114200983665455322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078249928151730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09456934d366004ab02a746bce7a093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212293059072306680
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -105,7 +117,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 665402291
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 13fc5594c6ea5214e86834d139658c9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

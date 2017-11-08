@@ -6,6 +6,7 @@ public class Spurdo : MonoBehaviour {
 
     public static float Speed;
     public GameObject Fodder;
+    public static Transform t;
 
     int flip;
     int maxRot;
@@ -23,6 +24,7 @@ public class Spurdo : MonoBehaviour {
         repeating = 0;
         repeatingMax = 8;
         z = 0;
+        t = transform;
 	}
 	
 	// Update is called once per frame
