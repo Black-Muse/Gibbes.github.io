@@ -5,6 +5,17 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour {
 
     Rigidbody2D comp;
+    public int classifier;
+
+    public void setClassifier(int c)
+    {
+        classifier = c;
+    }
+
+    public int getClassifier()
+    {
+        return classifier;
+    }
 
 	// Use this for initialization
 	void Start () {

@@ -12,7 +12,7 @@ public class General : MonoBehaviour {
     public static float LevelDistance;
     public static int AsteroidCount;
     public static int AlienCount;
-    public Transform asteroid;
+    public Asteroid[] asteroids;
     public Transform alien;
     public int RayZ;
     public int ForceMultiplier;
@@ -87,7 +87,9 @@ public class General : MonoBehaviour {
         if (Magnitude > NextMagnitude && AsteroidCount < 30)
         {
             NextMagnitude += 5;
-            Instantiate(asteroid, new Vector2(x, y), Quaternion.identity);
+            int classifier = (int)Mathf.Floor(asteroids.Length * Random.value);
+            Asteroid new_asteroid = Instantiate(asteroids[classifier], new Vector2(x, y), Quaternion.identity);
+            new_asteroid.setClassifier(classifier);
             AsteroidCount += 1;
         }
     }

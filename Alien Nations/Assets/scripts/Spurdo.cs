@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spurdo : MonoBehaviour {
 
     public static float Speed;
-    public GameObject Fodder;
+    public GameObject[] fodders;
     public static Transform t;
 
     int flip;
@@ -64,9 +64,19 @@ public class Spurdo : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision)
     {
         InvokeRepeating("flash", 0, 0.05f);
+        Asteroid a = collision.collider.GetComponent<Asteroid>();
+        int i;
+        if (a.getClassifier() == 2)
+        {
+            i = 1;
+        }
+        else
+        {
+            i = 0;
+        }
         for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
         {
-            Instantiate(Fodder, collision.transform.position, Quaternion.identity);
+            Instantiate(fodders[i], collision.transform.position, Quaternion.identity);
         }
         Destroy(collision.collider.gameObject);
         General.mouseDragging = false;
@@ -75,7 +85,7 @@ public class Spurdo : MonoBehaviour {
         {
             for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
             {
-                Instantiate(Fodder, collision.transform.position, Quaternion.identity);
+                Instantiate(fodders[0], collision.transform.position, Quaternion.identity);
             }
             Destroy(this.gameObject);
         }

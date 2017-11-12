@@ -324,7 +324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057cd2580d69d1d44830b83fb504088e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroid: {fileID: 4374364292305182, guid: e3490cfb775c8e44e899b00b379036d9, type: 2}
+  asteroids:
+  - {fileID: 114207085072462438, guid: e3490cfb775c8e44e899b00b379036d9, type: 2}
+  - {fileID: 114786036173953238, guid: 1e2cf70ca833f8a488b62006b0ef4d42, type: 2}
+  - {fileID: 114057416224128476, guid: 768905acd782c1044a620a57a006cede, type: 2}
   alien: {fileID: 4016910253334564, guid: b62c4e0a772da124fa7082d1f8789c32, type: 2}
   RayZ: 0
   ForceMultiplier: 0
@@ -700,7 +703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e94bd91ea4a0d146bd2e43b615bd942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fodder: {fileID: 1078249928151730, guid: 047b40deb59c57b40af15a9e1a982561, type: 2}
+  fodders:
+  - {fileID: 1078249928151730, guid: 047b40deb59c57b40af15a9e1a982561, type: 2}
+  - {fileID: 1734994945135578, guid: b7db6685be4c0794aa53a7ffdd86122c, type: 2}
 --- !u!50 &775389898
 Rigidbody2D:
   serializedVersion: 4
