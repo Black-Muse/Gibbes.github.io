@@ -7,7 +7,6 @@ public class Spurdo : MonoBehaviour {
     public static float Speed;
     public GameObject[] fodders;
     public static Transform t;
-
     int flip;
     int maxRot;
     int repeating;
@@ -15,8 +14,11 @@ public class Spurdo : MonoBehaviour {
     int tilt;
     int z;
 
-	// Use this for initialization
-	void Start ()
+    public Transform background_anchor;
+    public Background[] backs;
+
+    // Use this for initialization
+    void Start ()
     {
         Speed = 2.0f;
         flip = 0;
@@ -26,6 +28,22 @@ public class Spurdo : MonoBehaviour {
         z = 0;
         t = transform;
 	}
+
+    void RotateForward()
+    {
+        Background temp = backs[0];
+        backs[0] = backs[1];
+        backs[1] = backs[2];
+        backs[2] = temp;
+    }
+
+    void RotateBackward()
+    {
+        Background temp = backs[2];
+        backs[2] = backs[1];
+        backs[1] = backs[0];
+        backs[0] = temp;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -58,7 +76,18 @@ public class Spurdo : MonoBehaviour {
             }
         }
 
-	}
+        if (Mathf.Abs(backs[2].transform.position.x) <= 0.15f)
+        {
+            backs[0].transform.position = new Vector2(background_anchor.position.x * 2, 0);
+            RotateForward();
+        }
+        if (Mathf.Abs(backs[0].transform.position.x) <= 0.15f)
+        {
+            backs[2].transform.position = new Vector2(-background_anchor.position.x * 2, 0);
+            RotateBackward();
+        }
+
+    }
 
     // Collider flasher
     void OnCollisionEnter2D(Collision2D collision)
