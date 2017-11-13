@@ -11,6 +11,9 @@ public class Planet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Mathf.Abs(transform.position.x) > 20)
+        {
+            Destroy(gameObject);
+        }
 	}
 }
