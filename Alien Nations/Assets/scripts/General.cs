@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class General : MonoBehaviour {
 
-    public static float Distance;
     public static float HorizontalPos;
     public static float VerticalPos;
-    public static float Magnitude;
-    public static float NextMagnitude;
-    public static float LevelDistance;
+    public static float VerticalMagnitude;
+    public static float NextVerticalMagnitude;
+    public static float HorizontalMagnitude;
+    public static float NextHorizontalMagnitude;
     public static int AsteroidCount;
-    public static int AlienCount;
     public Asteroid[] asteroids;
     public Transform alien;
     public int RayZ;
@@ -29,17 +28,13 @@ public class General : MonoBehaviour {
     void Start () {
         cam = GetComponent<Camera>();
         lr = GetComponent<LineRenderer>();
-        Distance = 0.1f;
         HorizontalPos = 0;
-        LevelDistance = 250.0f;
         AsteroidCount = 0;
-        AlienCount = 0;
-        Magnitude = 0;
-        NextMagnitude = 0;
+        VerticalMagnitude = NextVerticalMagnitude = HorizontalMagnitude = NextHorizontalMagnitude = 0;
         RayZ = 1;
-        ForceMultiplier = 15;
+        ForceMultiplier = 30;
         health = 300;
-        damage = 0;
+        damage = metadata.dur;
     }
 	
 	// Update is called once per frame
@@ -47,46 +42,50 @@ public class General : MonoBehaviour {
         movement();
         tractorBeam();
     }
-    
+
     // Deals with movement
-    void movement ()
-    {   
-        bool w = Input.GetKey(KeyCode.W), a = Input.GetKey(KeyCode.A), s = Input.GetKey(KeyCode.S), d = Input.GetKey(KeyCode.D);
-        if (w || a || s || d)
+    void movement()
+    {
+        VerticalPos += Spurdo.velocity.y / 1.5f;
+        HorizontalPos += Spurdo.velocity.x / 1.5f;
+        VerticalMagnitude += Mathf.Abs(Spurdo.velocity.y);
+        HorizontalMagnitude += Mathf.Abs(Spurdo.velocity.x);
+        if (Spurdo.velocity.y > 0) {
+            spawnVert((Random.value * 24) - 12, 11);
+        }
+        else
         {
-            if (w)
-            {
-                VerticalPos += Distance;
-                Magnitude += Distance;
-                spawn((Random.value * 24) - 12, 11);
-            }
-            else if (s)
-            {
-                VerticalPos -= Distance;
-                Magnitude += Distance;
-                spawn((Random.value * 24) - 12, -11);
-            }
-            if (d)
-            {
-                HorizontalPos += Distance;
-                Magnitude += Distance;
-                spawn(12, (10 * Random.value) - 5);
-            }
-            else if (a)
-            {
-                HorizontalPos -= Distance / 4;
-                Magnitude += Distance / 4;
-                spawn(-12, (10 * Random.value) - 5);
-            }
+            spawnVert((Random.value * 24) - 12, -11);
+        }
+        if (Spurdo.velocity.x > 0)
+        {
+            spawnHor(12, (Random.value * 10) - 5);
+        }
+        else
+        {
+            spawnHor(-12, (Random.value * 10) - 5);
         }
     }
     
     // Manages creation of new asteroids
-    void spawn (float x, float y)
+    void spawnVert (float x, float y)
     {
-        if (Magnitude > NextMagnitude && AsteroidCount < 30)
+        if (VerticalMagnitude > NextVerticalMagnitude && AsteroidCount < 30)
         {
-            NextMagnitude += 5;
+            NextVerticalMagnitude += 5;
+            int classifier = (int)Mathf.Floor(asteroids.Length * Random.value);
+            Asteroid new_asteroid = Instantiate(asteroids[classifier], new Vector2(x, y), Quaternion.identity);
+            new_asteroid.setClassifier(classifier);
+            AsteroidCount += 1;
+        }
+    }
+
+    // Manages creation of new asteroids
+    void spawnHor(float x, float y)
+    {
+        if (HorizontalMagnitude > NextHorizontalMagnitude && AsteroidCount < 30)
+        {
+            NextHorizontalMagnitude += 5;
             int classifier = (int)Mathf.Floor(asteroids.Length * Random.value);
             Asteroid new_asteroid = Instantiate(asteroids[classifier], new Vector2(x, y), Quaternion.identity);
             new_asteroid.setClassifier(classifier);

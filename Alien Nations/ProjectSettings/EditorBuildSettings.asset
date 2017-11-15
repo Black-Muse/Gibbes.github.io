@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/misc/space.unity
+    guid: f75cf2abcabd1d545b78ca035949b746
+  - enabled: 1
+    path: Assets/misc/belmagia.unity
+    guid: 3a1d0dfa605910f47ba1c7874b05c39e
+  - enabled: 1
+    path: Assets/misc/fafnir.unity
+    guid: 0def7642fcbe5204b80d6177b9a2e2ee
+  - enabled: 1
+    path: Assets/misc/mandru.unity
+    guid: 4f49ad85e926e5b4a9ced45ba3403516

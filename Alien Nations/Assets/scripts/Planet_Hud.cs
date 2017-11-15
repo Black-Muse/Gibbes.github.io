@@ -29,6 +29,18 @@ public class Planet_Hud : MonoBehaviour
         anchorX = t.position.x;
         anchorY = t.position.y;
         multiplier = tt.position.y - anchorY;
+        switch (planet.planet_name)
+        {
+            case "Fafnir":
+                initialDistance = metadata.faf;
+                break;
+            case "Mandru":
+                initialDistance = metadata.man;
+                break;
+            case "Belmagia":
+                initialDistance = metadata.bel;
+                break;
+        }
         initialDistance += 90;
         currentDistance = initialDistance;
         shouldSpawn = true;

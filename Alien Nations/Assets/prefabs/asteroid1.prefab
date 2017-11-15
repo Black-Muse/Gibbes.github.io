@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classifier: 0
+  fodders:
+  - {fileID: 1078249928151730, guid: 047b40deb59c57b40af15a9e1a982561, type: 2}
+  - {fileID: 1734994945135578, guid: b7db6685be4c0794aa53a7ffdd86122c, type: 2}
 --- !u!114 &114933854223355590
 MonoBehaviour:
   m_ObjectHideFlags: 1

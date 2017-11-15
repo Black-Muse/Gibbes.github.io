@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class Background : MonoBehaviour {
 
     public static float distance;
-    public static bool noBack;
-    public static bool noFront;
     public Transform background_anchor;
-    public Background back;
 
     // Use this for initialization
     void Start () {

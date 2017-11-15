@@ -7,6 +7,8 @@ public class Asteroid : MonoBehaviour {
     Rigidbody2D comp;
     public int classifier;
 
+    public GameObject[] fodders;
+
     public void setClassifier(int c)
     {
         classifier = c;
@@ -54,6 +56,32 @@ public class Asteroid : MonoBehaviour {
         if (comp.angularVelocity < -60.0f)
         {
             comp.angularVelocity = -60.0f;
+        }
+    }
+
+    // Collider flasher
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "draggable") {
+            Asteroid a = collision.collider.GetComponent<Asteroid>();
+            if (GetComponent<Rigidbody2D>().velocity.magnitude > 1 || a.GetComponent<Rigidbody2D>().velocity.magnitude > 1)
+            {
+                int i;
+                if (a.getClassifier() == 2)
+                {
+                    i = 1;
+                }
+                else
+                {
+                    i = 0;
+                }
+                for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
+                {
+                    Instantiate(fodders[i], collision.transform.position, Quaternion.identity);
+                }
+                Destroy(collision.collider.gameObject);
+                General.mouseDragging = false;
+            }
         }
     }
 }
