@@ -85,6 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0a66b44bb72374380fe616cf074a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  messageSpace: {fileID: 114857102925611360, guid: 70b69e875c5f9644f8a2ce937f043d3c,
+    type: 2}
+  planet_name: Fafnir
 --- !u!212 &212343219754289806
 SpriteRenderer:
   m_ObjectHideFlags: 1

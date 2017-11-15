@@ -737,7 +737,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 708322872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4815.0005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 53.500004, y: 53.500004, z: 53.500004}
   m_Children: []
   m_Father: {fileID: 1436725931}
@@ -910,7 +910,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 830899199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4815.0005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 53.500004, y: 53.500004, z: 53.500004}
   m_Children:
   - {fileID: 683770155}
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 1436725928}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: CanvasUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1546,7 +1546,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1713932724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -476, y: -103, z: -4815.001}
+  m_LocalPosition: {x: -476, y: -103, z: 0}
   m_LocalScale: {x: 5.3077445, y: 5.3077445, z: 5.6792874}
   m_Children:
   - {fileID: 984232931}
@@ -1793,7 +1793,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067744263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -278.20306, y: 97.82563, z: -4837.989}
+  m_LocalPosition: {x: -278.20306, y: 97.82563, z: 0}
   m_LocalScale: {x: 53.500004, y: 53.500004, z: 53.500004}
   m_Children:
   - {fileID: 459132762}
