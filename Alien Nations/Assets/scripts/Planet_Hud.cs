@@ -55,6 +55,9 @@ public class Planet_Hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anchorX = t.position.x;
+        anchorY = t.position.y;
+        multiplier = orbitPosition * (tt.position.y - anchorY);
         blink_slowly();
         move();
     }
@@ -98,7 +101,7 @@ public class Planet_Hud : MonoBehaviour
             }
             float proportion = relativePosition.magnitude / 0.5f;
             relativePosition.Normalize();
-            p.position = proportion * anchor.position.magnitude * relativePosition;
+            p.position = proportion * 50 * relativePosition;
         }
         else
         {

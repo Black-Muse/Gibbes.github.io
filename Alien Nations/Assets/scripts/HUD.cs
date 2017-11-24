@@ -30,6 +30,9 @@ public class HUD : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        anchorX = t.position.x;
+        anchorY = t.position.y;
+        height = tt.position.y - anchorY;
         float yOffset = height * (((hot.position.y - transform.position.y) / distDenom) + 0.15f);
         transform.position = new Vector2(anchorX, anchorY + yOffset);
         if (transparency >= 1)

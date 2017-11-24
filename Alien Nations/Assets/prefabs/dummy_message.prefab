@@ -61,7 +61,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[e]'
+  m_Text: '[E] Exit'
 --- !u!114 &114903709888184258
 MonoBehaviour:
   m_ObjectHideFlags: 1

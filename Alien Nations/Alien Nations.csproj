@@ -223,6 +223,7 @@
     <Compile Include="Assets\planet_test.cs" />
     <Compile Include="Assets\scripts\Asteroid.cs" />
     <Compile Include="Assets\scripts\Background.cs" />
+    <Compile Include="Assets\scripts\CameraMovement.cs" />
     <Compile Include="Assets\scripts\Core.cs" />
     <Compile Include="Assets\scripts\General.cs" />
     <Compile Include="Assets\scripts\Health.cs" />

@@ -22,6 +22,7 @@ public class tempship : MonoBehaviour {
 	void Update () {
         if (transform.position.magnitude < 15)
         {
+            Debug.Log(message.text);
             message.text = "[E] Exit";
             if (Input.GetKey(KeyCode.E))
             {
