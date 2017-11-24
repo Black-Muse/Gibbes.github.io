@@ -54,8 +54,21 @@ public class Spurdo : MonoBehaviour {
             if (velocity.y > minY)
                 velocity.y -= dy;
         }
+        checkDestroy();
         rotation();
         background();
+    }
+
+    void checkDestroy()
+    {
+        if (General.damage >= General.health)
+        {
+            for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
+            {
+                Instantiate(fodders[0], transform.position, Quaternion.identity);
+            }
+            Destroy(this.gameObject);
+        }
     }
 
     void rotation()
@@ -110,14 +123,6 @@ public class Spurdo : MonoBehaviour {
         Destroy(collision.collider.gameObject);
         General.mouseDragging = false;
         General.damage += collision.relativeVelocity.magnitude * 20;
-        if (General.damage >= General.health)
-        {
-            for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
-            {
-                Instantiate(fodders[0], collision.transform.position, Quaternion.identity);
-            }
-            Destroy(this.gameObject);
-        }
     }
 
     void flash()

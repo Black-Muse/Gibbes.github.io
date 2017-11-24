@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        maxPos = 0.5f;
+        maxPos = 1f;
         dy = 1f;
 	}
 	
