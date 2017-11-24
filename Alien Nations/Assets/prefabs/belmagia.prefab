@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212960116007463562}
   - component: {fileID: 50192176967815710}
   - component: {fileID: 114668230303347218}
-  - component: {fileID: 114260412792790598}
   m_Layer: 0
   m_Name: belmagia
   m_TagString: Untagged
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487631577392320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.188122, y: 0, z: 0}
+  m_LocalPosition: {x: 22.233767, y: 10.000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,17 +62,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114260412792790598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1487631577392320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09456934d366004ab02a746bce7a093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114668230303347218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,6 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageSpace: {fileID: 114857102925611360, guid: 70b69e875c5f9644f8a2ce937f043d3c,
     type: 2}
+  position: {x: 0, y: 0}
+  shouldDestroy: 0
   planet_name: Belmagia
 --- !u!212 &212960116007463562
 SpriteRenderer:

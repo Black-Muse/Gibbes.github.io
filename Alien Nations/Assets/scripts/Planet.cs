@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Planet : MonoBehaviour {
 
     public Text messageSpace;
+    public Vector2 position;
+    public bool shouldDestroy;
     Text message;
     public string planet_name;
     GameObject canvas;
@@ -18,10 +20,12 @@ public class Planet : MonoBehaviour {
         canvas = GameObject.FindGameObjectWithTag("CanvasUI");
         message.transform.SetParent(canvas.transform, false);
         message.color = Color.white;
+        shouldDestroy = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        transform.position = position;
         if (transform.position.magnitude < 5)
         {
             message.text = "[E] Enter " + planet_name;
@@ -53,8 +57,9 @@ public class Planet : MonoBehaviour {
         {
             message.text = "";
         }
-		if (Mathf.Abs(transform.position.x) > 100)
+		if (shouldDestroy)
         {
+            Debug.Log("Planet destroyed");
             Destroy(gameObject);
         }
 	}

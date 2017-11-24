@@ -107,14 +107,16 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 731aa1feeb1521d974227ffd8e2f26de Assembly-CSharp.dll:.Asteroid
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.planet_test
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
-183669c1f6f4b2673c46e1dc04f724ae Assembly-CSharp.dll:.Planet
+f29a33d6248cc3e45772c28fe889731e Assembly-CSharp.dll:.Planet
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.metadata
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.sprite_control
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Health
+b5779ae22ed4000fc5116b862c189b49 Assembly-CSharp.dll:.tempship
 5f49f058aacf20f9140233f2baf92fa1 Assembly-CSharp.dll:.General
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -143,6 +145,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 29a4516028486cd7f44e173ed4c52f45 Assembly-CSharp.dll:.Background
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-001ce300aa7a750e76610d76158c5c1e Assembly-CSharp.dll:.Planet_Hud
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HUD
+68b312098141aeb4624fcdc17a209b34 Assembly-CSharp.dll:.Planet_Hud
+19f141644b568199f3a72ac4f907cb16 Assembly-CSharp.dll:.HUD
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Core
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Message

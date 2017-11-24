@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class Planet_Hud : MonoBehaviour
 {
+    public Transform hot;
+    public Transform cold;
+
     Transform t;
     Transform tt;
     public Transform anchor;
-
     public Planet planet;
+    public Transform ship;
+    public float orbitPosition;
+
     float transparency;
     bool up;
     float anchorX;
@@ -18,6 +23,7 @@ public class Planet_Hud : MonoBehaviour
     public float initialDistance;
     public float currentDistance;
     bool shouldSpawn;
+    Planet p;
 
     // Use this for initialization
     void Start()
@@ -28,7 +34,7 @@ public class Planet_Hud : MonoBehaviour
         tt = t.parent.transform;
         anchorX = t.position.x;
         anchorY = t.position.y;
-        multiplier = tt.position.y - anchorY;
+        multiplier = orbitPosition * (tt.position.y - anchorY);
         switch (planet.planet_name)
         {
             case "Fafnir":
@@ -81,18 +87,25 @@ public class Planet_Hud : MonoBehaviour
         float xOffset = multiplier * Mathf.Cos(currentDistance * Mathf.PI / 180);
         float yOffset = multiplier * Mathf.Sin(currentDistance * Mathf.PI / 180);
         transform.position = new Vector2(anchorX + xOffset, anchorY + yOffset);
-        if (Mathf.Sin(currentDistance * Mathf.PI / 180) > 0.9f)
+        Vector2 relativePosition = transform.position - ship.position;
+        if (relativePosition.magnitude < 0.5f)
         {
             GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, transparency);
             if (shouldSpawn)
             {
-                Instantiate(planet);
-                planet.transform.position = new Vector2(anchor.position.x, anchor.position.y);
+                p = Instantiate(planet);
+                shouldSpawn = false;
             }
-            shouldSpawn = false;
+            float proportion = relativePosition.magnitude / 0.5f;
+            relativePosition.Normalize();
+            p.position = proportion * anchor.position.magnitude * relativePosition;
         }
         else
         {
+            if (!shouldSpawn)
+            {
+                p.shouldDestroy = true;
+            }
             GetComponent<SpriteRenderer>().color = new Color(178, 255, 0, transparency);
             shouldSpawn = true;
         }
