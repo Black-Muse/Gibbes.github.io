@@ -15,7 +15,7 @@ public class tempship : MonoBehaviour {
         message = Instantiate(messageSpace);
         canvas = GameObject.FindGameObjectWithTag("CanvasUI");
         message.transform.SetParent(canvas.transform, false);
-        message.color = Color.white;
+        message.color = Color.black;
     }
 	
 	// Update is called once per frame
