@@ -9,6 +9,8 @@ public class HUD : MonoBehaviour {
 
     Transform t;
     Transform tt;
+    SpriteRenderer canvasColor;
+    float canvasTransparency;
     float anchorX;
     float anchorY;
     float height;
@@ -31,6 +33,8 @@ public class HUD : MonoBehaviour {
         distDenom = hot.position.y - cold.position.y;
         dangerZoneUp = height * 1.2f + anchorY;
         dangerZoneDown = 0.2f * height + anchorY;
+        canvasColor = GameObject.FindGameObjectWithTag("CanvasColor").GetComponent<SpriteRenderer>();
+        canvasTransparency = 0;
     }
 	
 	// Update is called once per frame
@@ -61,10 +65,14 @@ public class HUD : MonoBehaviour {
         if (transform.position.y < dangerZoneDown)
         {
             General.damage += 10 * (dangerZoneDown - transform.position.y);
+            canvasTransparency = Mathf.Min(.5f, (dangerZoneDown - transform.position.y));
+            canvasColor.color = new Color(0xFF / 255, 0x7E / 255, 0x7E / 255, canvasTransparency);
         }
         if (transform.position.y > dangerZoneUp)
         {
             General.damage += 4 * (transform.position.y - dangerZoneUp);
+            canvasTransparency = Mathf.Min(.5f, (transform.position.y - dangerZoneUp));
+            canvasColor.color = new Color(0x72 / 255, 0x85 / 255, 0xFF / 255, canvasTransparency);
         }
         Color c = GetComponent<SpriteRenderer>().color;
         c.a = transparency;

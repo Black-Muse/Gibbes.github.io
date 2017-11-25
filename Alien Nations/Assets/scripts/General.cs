@@ -59,11 +59,11 @@ public class General : MonoBehaviour {
         }
         if (Spurdo.velocity.x > 0)
         {
-            spawnHor(12, (Random.value * 10) - 5);
+            spawnHor(15, (Random.value * 10) - 5);
         }
         else
         {
-            spawnHor(-12, (Random.value * 10) - 5);
+            spawnHor(-15, (Random.value * 10) - 5);
         }
     }
     

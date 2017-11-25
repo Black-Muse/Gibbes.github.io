@@ -6,6 +6,7 @@ TagManager:
   tags:
   - draggable
   - CanvasUI
+  - CanvasColor
   layers:
   - Default
   - TransparentFX
