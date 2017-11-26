@@ -59,7 +59,6 @@ public class Planet : MonoBehaviour {
         }
 		if (shouldDestroy)
         {
-            Debug.Log("Planet destroyed");
             Destroy(gameObject);
         }
 	}

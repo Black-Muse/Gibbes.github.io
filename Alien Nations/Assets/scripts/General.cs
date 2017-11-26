@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class General : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class General : MonoBehaviour {
     public static float NextVerticalMagnitude;
     public static float HorizontalMagnitude;
     public static float NextHorizontalMagnitude;
+    public static bool GameOver;
     public static int AsteroidCount;
     public Asteroid[] asteroids;
     public Transform alien;
@@ -23,6 +25,7 @@ public class General : MonoBehaviour {
     LineRenderer lr;
     RaycastHit2D hit;
     GameObject target;
+    float timeToDeath;
 
     // Use this for initialization
     void Start () {
@@ -33,14 +36,27 @@ public class General : MonoBehaviour {
         VerticalMagnitude = NextVerticalMagnitude = HorizontalMagnitude = NextHorizontalMagnitude = 0;
         RayZ = 1;
         ForceMultiplier = 30;
+        GameOver = false;
         health = 300;
         damage = metadata.dur;
+        timeToDeath = 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
         movement();
         tractorBeam();
+        if (GameOver)
+        {
+            if (timeToDeath < 1)
+            {
+                timeToDeath += 0.005f;
+            }
+            else
+            {
+                SceneManager.LoadScene("space");
+            }
+        }
     }
 
     // Deals with movement

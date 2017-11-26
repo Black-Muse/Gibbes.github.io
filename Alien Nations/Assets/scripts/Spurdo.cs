@@ -67,6 +67,7 @@ public class Spurdo : MonoBehaviour {
             {
                 Instantiate(fodders[0], transform.position, Quaternion.identity);
             }
+            General.GameOver = true;
             Destroy(this.gameObject);
         }
     }
