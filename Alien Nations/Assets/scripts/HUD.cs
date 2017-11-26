@@ -65,13 +65,13 @@ public class HUD : MonoBehaviour {
         if (transform.position.y < dangerZoneDown)
         {
             General.damage += 10 * (dangerZoneDown - transform.position.y);
-            canvasTransparency = Mathf.Min(.5f, (dangerZoneDown - transform.position.y));
+            canvasTransparency = Mathf.Min(.75f, 2 * (dangerZoneDown - transform.position.y));
             canvasColor.color = new Color(0xFF / 255, 0x7E / 255, 0x7E / 255, canvasTransparency);
         }
         if (transform.position.y > dangerZoneUp)
         {
             General.damage += 4 * (transform.position.y - dangerZoneUp);
-            canvasTransparency = Mathf.Min(.5f, (transform.position.y - dangerZoneUp));
+            canvasTransparency = Mathf.Min(.75f, 2 * (transform.position.y - dangerZoneUp));
             canvasColor.color = new Color(0x72 / 255, 0x85 / 255, 0xFF / 255, canvasTransparency);
         }
         Color c = GetComponent<SpriteRenderer>().color;
