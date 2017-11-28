@@ -14,6 +14,8 @@ TagManager:
   - Helium
   - Hydrogen
   - Iron
+  - vert
+  - horz
   layers:
   - Default
   - TransparentFX

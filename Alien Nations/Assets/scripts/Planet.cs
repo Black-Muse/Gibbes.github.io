@@ -42,19 +42,19 @@ public class Planet : MonoBehaviour {
                 switch (planet_name)
                 {
                     case "Fafnir":
-                        metadata.faf = 340;
-                        metadata.man = 220;
-                        metadata.bel = 100;
+                        metadata.faf = 360;
+                        metadata.man = 240;
+                        metadata.bel = 120;
                         break;
                     case "Mandru":
-                        metadata.faf = 100;
-                        metadata.man = 340;
-                        metadata.bel = 220;
+                        metadata.faf = 120;
+                        metadata.man = 360;
+                        metadata.bel = 240;
                         break;
                     case "Belmagia":
-                        metadata.faf = 220;
-                        metadata.man = 100;
-                        metadata.bel = 340;
+                        metadata.faf = 240;
+                        metadata.man = 120;
+                        metadata.bel = 360;
                         break;
                 }
                 metadata.dur = General.damage;

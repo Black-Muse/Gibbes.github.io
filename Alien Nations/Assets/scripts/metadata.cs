@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class metadata : MonoBehaviour {
 
-    public static float faf = -20;
-    public static float man = 220;
-    public static float bel = 100;
+    public static float faf = 240;
+    public static float man = 120;
+    public static float bel = 0;
     public static float dur = 0;
     public static int fur = 0;
     public static int wood = 0;

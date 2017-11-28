@@ -238,6 +238,7 @@
     <Compile Include="Assets\scripts\Planet_Hud.cs" />
     <Compile Include="Assets\scripts\SpaceObject.cs" />
     <Compile Include="Assets\scripts\Spurdo.cs" />
+    <Compile Include="Assets\scripts\VelocityText.cs" />
     <Compile Include="Assets\sprite_control.cs" />
     <Compile Include="Assets\tempship.cs" />
   </ItemGroup>
