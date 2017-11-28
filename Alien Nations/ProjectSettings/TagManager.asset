@@ -8,6 +8,12 @@ TagManager:
   - CanvasUI
   - CanvasColor
   - TransitionColor
+  - Fur
+  - Wood
+  - Spice
+  - Helium
+  - Hydrogen
+  - Iron
   layers:
   - Default
   - TransparentFX
