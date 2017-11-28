@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour {
 
     public static bool paused;
+    public static bool inv;
+    public Inventory inventory;
 
 	// Use this for initialization
 	void Start () {
@@ -13,17 +16,14 @@ public class Pause : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             paused = !paused;
+            Time.timeScale = 1 - Time.timeScale;
         }
-		if (paused)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
+            inv = !inv;
         }
 	}
 }
