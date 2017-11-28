@@ -25,6 +25,14 @@ public class Planet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!Pause.paused)
+        {
+            updatePos();
+        }
+	}
+
+    void updatePos()
+    {
         transform.position = position;
         if (transform.position.magnitude < 5)
         {
@@ -57,9 +65,9 @@ public class Planet : MonoBehaviour {
         {
             message.text = "";
         }
-		if (shouldDestroy)
+        if (shouldDestroy)
         {
             Destroy(gameObject);
         }
-	}
+    }
 }

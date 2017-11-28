@@ -55,11 +55,14 @@ public class Planet_Hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anchorX = t.position.x;
-        anchorY = t.position.y;
-        multiplier = orbitPosition * (tt.position.y - anchorY);
-        blink_slowly();
-        move();
+        if (!Pause.paused)
+        {
+            anchorX = t.position.x;
+            anchorY = t.position.y;
+            multiplier = orbitPosition * (tt.position.y - anchorY);
+            blink_slowly();
+            move();
+        }
     }
 
     // Slow blinking

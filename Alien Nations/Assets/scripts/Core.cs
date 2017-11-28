@@ -6,6 +6,9 @@ public class Core : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector2(0, transform.position.y - Spurdo.velocity.y);
+        if (!Pause.paused)
+        {
+            transform.position = new Vector2(0, transform.position.y - Spurdo.velocity.y);
+        }
     }
 }

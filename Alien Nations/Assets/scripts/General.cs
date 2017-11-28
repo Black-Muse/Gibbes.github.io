@@ -41,11 +41,19 @@ public class General : MonoBehaviour {
         damage = metadata.dur;
         timeToDeath = 0;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        movement();
-        tractorBeam();
+
+    // Update is called once per frame
+    void Update() {
+        if (!Pause.paused)
+        {
+            movement();
+            tractorBeam();
+            checkReset();
+        }
+    }
+    
+    void checkReset()
+    {
         if (GameOver)
         {
             if (timeToDeath < 1)

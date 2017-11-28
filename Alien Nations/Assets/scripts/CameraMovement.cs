@@ -16,6 +16,14 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!Pause.paused)
+        {
+            dampenCamera();
+        }
+	}
+
+    void dampenCamera ()
+    {
         Vector3 vec = transform.position;
         Vector3 target = Vector3.zero;
         if (Input.GetKey(KeyCode.S))
@@ -28,5 +36,5 @@ public class CameraMovement : MonoBehaviour {
         }
         vec.y = Mathf.SmoothDamp(transform.position.y, target.y, ref velocity.y, dy);
         transform.position = vec;
-	}
+    }
 }

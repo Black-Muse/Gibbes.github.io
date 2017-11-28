@@ -14,7 +14,10 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float damage = Mathf.Floor(100 * General.damage / General.health);
-        t.text = "Durability: " + (100 - damage) + "%";
+        if (!Pause.paused)
+        {
+            float damage = Mathf.Floor(100 * General.damage / General.health);
+            t.text = "Durability: " + (100 - damage) + "%";
+        }
 	}
 }

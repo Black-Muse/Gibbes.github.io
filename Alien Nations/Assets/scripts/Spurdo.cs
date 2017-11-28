@@ -34,29 +34,37 @@ public class Spurdo : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (!Pause.paused)
+        {
+            controlVelocity();
+            checkDestroy();
+            rotation();
+            background();
+        }
+    }
+
+    void controlVelocity()
+    {
         if (Input.GetKey(KeyCode.D))
         {
             if (velocity.x < maxX)
-            velocity.x += dx;
+                velocity.x += dx;
         }
         else if (Input.GetKey(KeyCode.A))
         {
             if (velocity.x > minX)
-            velocity.x -= dx;
+                velocity.x -= dx;
         }
         if (Input.GetKey(KeyCode.W))
         {
             if (velocity.y < maxY)
-            velocity.y += dy;
+                velocity.y += dy;
         }
         else if (Input.GetKey(KeyCode.S))
         {
             if (velocity.y > minY)
                 velocity.y -= dy;
         }
-        checkDestroy();
-        rotation();
-        background();
     }
 
     void checkDestroy()

@@ -39,6 +39,16 @@ public class HUD : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!Pause.paused)
+        {
+            updatePosition();
+            outOfBoundsCheck();
+            controlTransparency();
+        }
+	}
+
+    void updatePosition()
+    {
         anchorX = t.position.x;
         anchorY = t.position.y;
         height = tt.position.y - anchorY;
@@ -46,6 +56,26 @@ public class HUD : MonoBehaviour {
         dangerZoneDown = 0.25f * height + anchorY;
         float yOffset = height * (((hot.position.y - transform.position.y) / distDenom) + 0.15f);
         transform.position = new Vector2(anchorX, anchorY + yOffset);
+    }
+
+    void outOfBoundsCheck()
+    {
+        if (transform.position.y < dangerZoneDown)
+        {
+            General.damage += 10 * (dangerZoneDown - transform.position.y);
+            canvasTransparency = Mathf.Min(.75f, 2 * (dangerZoneDown - transform.position.y));
+            canvasColor.color = new Color(0xFF / 255, 0x7E / 255, 0x7E / 255, canvasTransparency);
+        }
+        if (transform.position.y > dangerZoneUp)
+        {
+            General.damage += 4 * (transform.position.y - dangerZoneUp);
+            canvasTransparency = Mathf.Min(.75f, 2 * (transform.position.y - dangerZoneUp));
+            canvasColor.color = new Color(0x72 / 255, 0x85 / 255, 0xFF / 255, canvasTransparency);
+        }
+    }
+
+    void controlTransparency()
+    {
         if (transparency >= 1)
         {
             up = false;
@@ -62,20 +92,8 @@ public class HUD : MonoBehaviour {
         {
             transparency -= 0.01f;
         }
-        if (transform.position.y < dangerZoneDown)
-        {
-            General.damage += 10 * (dangerZoneDown - transform.position.y);
-            canvasTransparency = Mathf.Min(.75f, 2 * (dangerZoneDown - transform.position.y));
-            canvasColor.color = new Color(0xFF / 255, 0x7E / 255, 0x7E / 255, canvasTransparency);
-        }
-        if (transform.position.y > dangerZoneUp)
-        {
-            General.damage += 4 * (transform.position.y - dangerZoneUp);
-            canvasTransparency = Mathf.Min(.75f, 2 * (transform.position.y - dangerZoneUp));
-            canvasColor.color = new Color(0x72 / 255, 0x85 / 255, 0xFF / 255, canvasTransparency);
-        }
         Color c = GetComponent<SpriteRenderer>().color;
         c.a = transparency;
         GetComponent<SpriteRenderer>().color = c;
-	}
+    }
 }

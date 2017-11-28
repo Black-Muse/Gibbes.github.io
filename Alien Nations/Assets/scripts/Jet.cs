@@ -15,20 +15,23 @@ public class Jet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		switch (activate)
+        if (!Pause.paused)
         {
-            case 'd':
-                controller(Input.GetKey(KeyCode.D));
-                break;
-            case 'a':
-                controller(Input.GetKey(KeyCode.A));
-                break;
-            case 's':
-                controller(Input.GetKey(KeyCode.S));
-                break;
-            case 'w':
-                controller(Input.GetKey(KeyCode.W));
-                break;
+            switch (activate)
+            {
+                case 'd':
+                    controller(Input.GetKey(KeyCode.D));
+                    break;
+                case 'a':
+                    controller(Input.GetKey(KeyCode.A));
+                    break;
+                case 's':
+                    controller(Input.GetKey(KeyCode.S));
+                    break;
+                case 'w':
+                    controller(Input.GetKey(KeyCode.W));
+                    break;
+            }
         }
 	}
 

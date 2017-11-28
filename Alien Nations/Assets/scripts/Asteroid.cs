@@ -29,9 +29,11 @@ public class Asteroid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        deleteIfFar();
-        controlSpin();
-
+        if (!Pause.paused)
+        {
+            deleteIfFar();
+            controlSpin();
+        }
     }
 
     // Remove asteroids that have gotten too far away

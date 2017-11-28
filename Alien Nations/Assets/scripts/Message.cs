@@ -16,6 +16,14 @@ public class Message : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!Pause.paused)
+        {
+            updateTransparency();
+        }
+    }
+
+    void updateTransparency()
+    {
         if (transparency >= 1)
         {
             up = false;
@@ -35,10 +43,5 @@ public class Message : MonoBehaviour {
         Color c = GetComponent<Text>().color;
         c.a = transparency;
         GetComponent<Text>().color = c;
-
-        if (Mathf.Abs(transform.position.x) > 20)
-        {
-            Destroy(gameObject);
-        }
     }
 }
