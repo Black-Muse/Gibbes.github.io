@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/misc/space.unity
+- path: Assets/misc/fafnir.unity
   isLoaded: 1
   isActive: 1
