@@ -16,6 +16,7 @@ TagManager:
   - Iron
   - vert
   - horz
+  - Spurdo
   layers:
   - Default
   - TransparentFX

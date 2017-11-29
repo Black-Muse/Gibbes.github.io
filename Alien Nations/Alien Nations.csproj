@@ -225,6 +225,7 @@
     <Compile Include="Assets\scripts\Background.cs" />
     <Compile Include="Assets\scripts\CameraMovement.cs" />
     <Compile Include="Assets\scripts\Core.cs" />
+    <Compile Include="Assets\scripts\Element.cs" />
     <Compile Include="Assets\scripts\General.cs" />
     <Compile Include="Assets\scripts\Health.cs" />
     <Compile Include="Assets\scripts\HUD.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="Assets\scripts\Pause.cs" />
     <Compile Include="Assets\scripts\Planet.cs" />
     <Compile Include="Assets\scripts\Planet_Hud.cs" />
+    <Compile Include="Assets\scripts\RandomDirections.cs" />
     <Compile Include="Assets\scripts\SpaceObject.cs" />
     <Compile Include="Assets\scripts\Spurdo.cs" />
     <Compile Include="Assets\scripts\VelocityText.cs" />

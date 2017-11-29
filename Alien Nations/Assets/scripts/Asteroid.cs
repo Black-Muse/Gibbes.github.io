@@ -8,6 +8,7 @@ public class Asteroid : MonoBehaviour {
     public int classifier;
 
     public GameObject[] fodders;
+    public GameObject element;
 
     public void setClassifier(int c)
     {
@@ -24,7 +25,6 @@ public class Asteroid : MonoBehaviour {
         comp = GetComponent<Rigidbody2D>();
         comp.angularVelocity = Random.value * 60.0f;
         comp.velocity = Random.insideUnitCircle;
-
     }
 	
 	// Update is called once per frame
@@ -80,6 +80,10 @@ public class Asteroid : MonoBehaviour {
                 for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
                 {
                     Instantiate(fodders[i], collision.transform.position, Quaternion.identity);
+                }
+                for (var n = 0; n < Mathf.Floor(Random.value * 8); n++)
+                {
+                    Instantiate(element, transform.position, Quaternion.identity);
                 }
                 Destroy(collision.collider.gameObject);
                 General.mouseDragging = false;

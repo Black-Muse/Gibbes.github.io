@@ -12,6 +12,8 @@ public class Spurdo : MonoBehaviour {
     int flip, maxRot, repeating, repeatingMax, z;
 
     public GameObject[] fodders;
+    public GameObject[] elements;
+    public Transform brokenBits;
     public Transform background_anchor;
     public Background[] backs;
 
@@ -71,12 +73,9 @@ public class Spurdo : MonoBehaviour {
     {
         if (General.damage >= General.health)
         {
-            for (var n = 0; n < 20 + Mathf.Floor(Random.value * 3); n++)
-            {
-                Instantiate(fodders[0], transform.position, Quaternion.identity);
-            }
+            Instantiate(brokenBits);
             General.GameOver = true;
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -114,24 +113,31 @@ public class Spurdo : MonoBehaviour {
     // Collider flasher
     void OnCollisionEnter2D(Collision2D collision)
     {
-        InvokeRepeating("flash", 0, 0.05f);
-        Asteroid a = collision.collider.GetComponent<Asteroid>();
-        int i;
-        if (a.getClassifier() == 2)
+        if (collision.collider.gameObject.tag == "draggable")
         {
-            i = 1;
+            InvokeRepeating("flash", 0, 0.05f);
+            Asteroid a = collision.collider.GetComponent<Asteroid>();
+            int i;
+            if (a.getClassifier() == 2)
+            {
+                i = 1;
+            }
+            else
+            {
+                i = 0;
+            }
+            for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
+            {
+                Instantiate(fodders[i], collision.transform.position, Quaternion.identity);
+            }
+            //for (var n = 0; n < Mathf.Floor(Random.value * 8); n++)
+            //{
+            //    Instantiate(elements[a.getClassifier()], collision.transform.position, Quaternion.identity);
+            //}
+            Destroy(collision.collider.gameObject);
+            General.mouseDragging = false;
+            General.damage += collision.relativeVelocity.magnitude * 20;
         }
-        else
-        {
-            i = 0;
-        }
-        for (var n = 0; n < 4 + Mathf.Floor(Random.value * 3); n++)
-        {
-            Instantiate(fodders[i], collision.transform.position, Quaternion.identity);
-        }
-        Destroy(collision.collider.gameObject);
-        General.mouseDragging = false;
-        General.damage += collision.relativeVelocity.magnitude * 20;
     }
 
     void flash()
