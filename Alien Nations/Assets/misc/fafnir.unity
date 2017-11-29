@@ -187,9 +187,31 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1938494662187458, guid: 828713638cf0e2c44b860674f424129d, type: 2}
+      propertyPath: m_TagString
+      value: Hydrogen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 828713638cf0e2c44b860674f424129d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &23800481 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938494662187458, guid: 828713638cf0e2c44b860674f424129d,
+    type: 2}
+  m_PrefabInternal: {fileID: 23800480}
+--- !u!114 &23800482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 23800481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc903bf2c9842ca4399fa3780ccbd180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageSpace: {fileID: 114873957873918412, guid: 32b45d0a5959e8a4b857b80173f2906a,
+    type: 2}
 --- !u!1 &84775920
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +407,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 117077976}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -47.9, z: 0}
   m_LocalScale: {x: 0.96, y: 0.96, z: 0.96}
   m_Children:
@@ -427,7 +449,7 @@ Transform:
   - {fileID: 250805296}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &117077979
 Rigidbody2D:
   serializedVersion: 4
@@ -1915,8 +1937,19 @@ Prefab:
     - target: {fileID: 212959980751444446, guid: a0836f677cc5ec844b153e9e83bbdb54,
         type: 2}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 212959980751444446, guid: a0836f677cc5ec844b153e9e83bbdb54,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c0e0bd970c45ca4e8060ce720d55f24,
+        type: 3}
+    - target: {fileID: 95505607001857034, guid: a0836f677cc5ec844b153e9e83bbdb54,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 88366ab2313634147bfc3a59e9a889b3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0836f677cc5ec844b153e9e83bbdb54, type: 2}
   m_IsPrefabParent: 0

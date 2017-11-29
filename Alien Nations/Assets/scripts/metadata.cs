@@ -14,4 +14,5 @@ public class metadata : MonoBehaviour {
     public static int helium = 0;
     public static int hydrogen = 0;
     public static int iron = 0;
+    public static int creds = 0;
 }

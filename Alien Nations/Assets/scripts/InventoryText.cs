@@ -61,6 +61,9 @@ public class InventoryText : MonoBehaviour {
             case "Iron":
                 value = metadata.iron;
                 break;
+            case "Creds":
+                value = metadata.creds;
+                break;
         }
     }
 

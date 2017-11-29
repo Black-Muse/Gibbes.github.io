@@ -17,6 +17,7 @@ TagManager:
   - vert
   - horz
   - Spurdo
+  - Creds
   layers:
   - Default
   - TransparentFX

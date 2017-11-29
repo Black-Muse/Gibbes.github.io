@@ -74,6 +74,14 @@ public class Spurdo : MonoBehaviour {
         if (General.damage >= General.health)
         {
             Instantiate(brokenBits);
+            metadata.helium = 0;
+            metadata.hydrogen = 0;
+            metadata.iron = 0;
+            metadata.creds = 0;
+            metadata.faf = 240;
+            metadata.man = 120;
+            metadata.bel = 0;
+            metadata.dur = 0;
             General.GameOver = true;
             Destroy(gameObject);
         }

@@ -221,6 +221,7 @@
   <ItemGroup>
     <Compile Include="Assets\planet_test.cs" />
     <Compile Include="Assets\repair_station.cs" />
+    <Compile Include="Assets\Sales.cs" />
     <Compile Include="Assets\scripts\Asteroid.cs" />
     <Compile Include="Assets\scripts\Background.cs" />
     <Compile Include="Assets\scripts\CameraMovement.cs" />
