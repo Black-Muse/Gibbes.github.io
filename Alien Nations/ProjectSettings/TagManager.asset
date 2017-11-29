@@ -69,6 +69,12 @@ TagManager:
   - name: Planet
     uniqueID: 3189013305
     locked: 0
+  - name: Owen_Anim
+    uniqueID: 1997498527
+    locked: 0
+  - name: Owen
+    uniqueID: 382057167
+    locked: 0
   - name: Spurdo
     uniqueID: 3014261193
     locked: 0
