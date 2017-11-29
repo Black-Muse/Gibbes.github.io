@@ -172,7 +172,7 @@ public class General : MonoBehaviour {
         if (mouseDragging)
         {
             Vector3 start = target.transform.position;
-            Vector3 end = cam.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 end = Vector2.zero;
             start.z = RayZ;
             end.z = RayZ;
             lr.SetPositions(new Vector3[] { start, end });
