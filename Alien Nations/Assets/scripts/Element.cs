@@ -11,6 +11,7 @@ public class Element : MonoBehaviour {
     {
         comp = GetComponent<Rigidbody2D>();
         comp.velocity = Random.insideUnitCircle;
+        comp.angularVelocity = Random.value * 60.0f;
     }
 
     // Update is called once per frame
