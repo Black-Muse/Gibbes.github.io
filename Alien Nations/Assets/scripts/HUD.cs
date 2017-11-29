@@ -14,7 +14,9 @@ public class HUD : MonoBehaviour {
     float anchorX;
     float anchorY;
     float height;
-    float distDenom;
+    public static float distDenom;
+    public static float hudPos;
+    public static float sunPos;
     float transparency;
     bool up;
 
@@ -30,6 +32,8 @@ public class HUD : MonoBehaviour {
         anchorX = t.position.x;
         anchorY = t.position.y;
         height = tt.position.y - anchorY;
+        hudPos = transform.position.y;
+        sunPos = hot.position.y;
         distDenom = hot.position.y - cold.position.y;
         dangerZoneUp = height * 1.2f + anchorY;
         dangerZoneDown = 0.2f * height + anchorY;
@@ -52,24 +56,26 @@ public class HUD : MonoBehaviour {
         anchorX = t.position.x;
         anchorY = t.position.y;
         height = tt.position.y - anchorY;
+        hudPos = transform.position.y;
+        sunPos = hot.position.y;
         dangerZoneUp = height + anchorY;
         dangerZoneDown = 0.25f * height + anchorY;
-        float yOffset = height * (((hot.position.y - transform.position.y) / distDenom) + 0.15f);
+        float yOffset = height * (((sunPos - hudPos) / distDenom) + 0.15f);
         transform.position = new Vector2(anchorX, anchorY + yOffset);
     }
 
     void outOfBoundsCheck()
     {
-        if (transform.position.y < dangerZoneDown)
+        if (hudPos < dangerZoneDown)
         {
-            General.damage += 10 * (dangerZoneDown - transform.position.y);
-            canvasTransparency = Mathf.Min(.75f, 2 * (dangerZoneDown - transform.position.y));
+            General.damage += 10 * (dangerZoneDown - hudPos);
+            canvasTransparency = Mathf.Min(.75f, 2 * (dangerZoneDown - hudPos));
             canvasColor.color = new Color(0xFF / 255, 0x7E / 255, 0x7E / 255, canvasTransparency);
         }
-        if (transform.position.y > dangerZoneUp)
+        if (hudPos > dangerZoneUp)
         {
-            General.damage += 4 * (transform.position.y - dangerZoneUp);
-            canvasTransparency = Mathf.Min(.75f, 2 * (transform.position.y - dangerZoneUp));
+            General.damage += 4 * (hudPos - dangerZoneUp);
+            canvasTransparency = Mathf.Min(.75f, 2 * (hudPos - dangerZoneUp));
             canvasColor.color = new Color(0x72 / 255, 0x85 / 255, 0xFF / 255, canvasTransparency);
         }
     }

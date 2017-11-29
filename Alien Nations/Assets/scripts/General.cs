@@ -26,6 +26,7 @@ public class General : MonoBehaviour {
     RaycastHit2D hit;
     GameObject target;
     float timeToDeath;
+    float chanceOfButt;
 
     // Use this for initialization
     void Start () {
@@ -40,6 +41,7 @@ public class General : MonoBehaviour {
         health = 300;
         damage = metadata.dur;
         timeToDeath = 0;
+        chanceOfButt = 0.5f;
     }
 
     // Update is called once per frame
@@ -97,7 +99,7 @@ public class General : MonoBehaviour {
         if (VerticalMagnitude > NextVerticalMagnitude && AsteroidCount < 30)
         {
             NextVerticalMagnitude += 5;
-            int classifier = (int)Mathf.Floor(asteroids.Length * Random.value);
+            int classifier = calculateClassifier((HUD.sunPos - HUD.hudPos) / HUD.distDenom);
             Asteroid new_asteroid = Instantiate(asteroids[classifier], new Vector2(x, y), Quaternion.identity);
             new_asteroid.setClassifier(classifier);
             AsteroidCount += 1;
@@ -110,10 +112,38 @@ public class General : MonoBehaviour {
         if (HorizontalMagnitude > NextHorizontalMagnitude && AsteroidCount < 30)
         {
             NextHorizontalMagnitude += 5;
-            int classifier = (int)Mathf.Floor(asteroids.Length * Random.value);
+            int classifier = calculateClassifier((HUD.sunPos - HUD.hudPos) / HUD.distDenom);
             Asteroid new_asteroid = Instantiate(asteroids[classifier], new Vector2(x, y), Quaternion.identity);
             new_asteroid.setClassifier(classifier);
             AsteroidCount += 1;
+        }
+    }
+
+    int calculateClassifier (float relativeLocation)
+    {
+        float heliumProb = (relativeLocation + 0.25f) * (100 - chanceOfButt);
+        if (heliumProb < 70)
+        {
+            heliumProb = 5;
+        }
+        float hydrogenProb = ((100 - heliumProb - chanceOfButt) / 2);
+        float ironProb = hydrogenProb;
+        float randomRoll = 100 * Random.value;
+        if (randomRoll < chanceOfButt)
+        {
+            return 3;
+        }
+        else if (randomRoll < chanceOfButt + ironProb)
+        {
+            return 1;
+        }
+        else if (randomRoll < chanceOfButt + hydrogenProb + ironProb)
+        {
+            return 0;
+        }
+        else
+        {
+            return 2;
         }
     }
 
