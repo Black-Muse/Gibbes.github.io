@@ -2,6 +2,7 @@
 Gibbes.github.io is the placeholder name for this game involving alien universes. 
 ## by: Michael Gibbes and Jaco Beneduci
 
+Michael Gibbes did all the coding, while I was the artist, animator and writer.
 The first version of this game was displayed and tested during class on 9/27/2017.
 
 ### Version 1
